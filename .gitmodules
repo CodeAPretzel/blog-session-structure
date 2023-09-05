@@ -1,0 +1,4 @@
+[submodule "codeapretzel-blog/public"]
+	path = codeapretzel-blog/public
+	url = https://github.com/CodeAPretzel/codeapretzel.github.io.git
+	branch = main
