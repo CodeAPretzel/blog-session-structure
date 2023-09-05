@@ -1,4 +1,4 @@
-baseURL = 'http://codeapretzel.github.io/'
+baseURL = 'https://codeapretzel.github.io/'
 languageCode = 'en-us'
 title = 'CodeAPretzel Blog'
 theme = "terminal"
