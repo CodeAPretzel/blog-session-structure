@@ -14,11 +14,188 @@
       <pubDate>Mon, 04 Sep 2023 18:42:23 -0500</pubDate>
       
       <guid>https://codeapretzel.github.io/posts/hackabit-ctf-qualifiers-0x01/</guid>
-      <description>Test This is some content
-Test: 1 2 3</description>
-      <content>&lt;h1 id=&#34;test&#34;&gt;Test&lt;/h1&gt;
-&lt;p&gt;This is some content&lt;/p&gt;
-&lt;p&gt;Test: 1 2 3&lt;/p&gt;
+      <description>💥 Hack-A-Bit 0x01 💥 In the Hack-a-Bit (HaB) category infastructure, you will find the following challenges with their designated points:
+Captain (75 points) Seashell (75 points) Loading (100 points) Location (100 points) Connector (125 points) Boat (125 points) Inspector (150 points) Hammer (150 points) With each challenge we will figure out the problems and how to solve each one:
+- Captain 🌊 - Challenge: Cloud infrastructure is migrating to containerized technology in many places, lets get started with containers.</description>
+      <content>&lt;h1 id=&#34;-hack-a-bit-0x01-&#34;&gt;💥 Hack-A-Bit 0x01 💥&lt;/h1&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;In the Hack-a-Bit (HaB) category infastructure, you will find the following challenges with their designated points:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;Captain (75 points)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;Seashell (75 points)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;Loading (100 points)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;Location (100 points)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;Connector (125 points)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;Boat (125 points)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;Inspector (150 points)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;Hammer (150 points)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;With each challenge we will figure out the problems and how to solve each one:&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;--captain---&#34;&gt;- Captain 🌊 -&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Challenge&lt;/strong&gt;: Cloud infrastructure is migrating to containerized technology in many places, lets get started with containers. Run this docker container with the environment variable FLAG_ENABLER set to give_me_the_flag.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Container&lt;/strong&gt;: &lt;a href=&#34;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1&#34;&gt;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;|
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Solution&lt;/strong&gt;: The point of this challenge is for the challenger to find a way to run the container with defining the set variable in the container. For this challenge you can use any updated distro of Linux. Before we could use the pull request in URL given, we first need to install the Docker packages necessary using the command line below:&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;  sudo apt-get update
+  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+&lt;/code&gt;&lt;/pre&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;After that we pull the container from the URL:&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;  docker pull nathanielsinger/hackabit0x01-infrastructure-container1
+&lt;/code&gt;&lt;/pre&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Afterwards, all we need to do is set the ENV. variable for the container which, after a google search later, we get the following command:&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;  sudo docker run -e FLAG_ENABLER=give_me_the_flag nathanielsinger/hackabit0x01-infrastructure-container1 #
+&lt;/code&gt;&lt;/pre&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;This brings the output: &lt;strong&gt;flag{you_aren&amp;rsquo;t_the_captain_just_yet}&lt;/strong&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;--seashell---&#34;&gt;- Seashell 🐚 -&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Challenge&lt;/strong&gt;: SSH runs the internet. Connect to utkwrgubhj.qualifier.hackabit.com on port 22 with user hackerman and the provided private key.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Key&lt;/strong&gt;: &lt;!-- raw HTML omitted --&gt;Go to File&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;|
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Solution&lt;/strong&gt;: The point of this challenge is for the challenger to learn about connections with private and public keys and how to gain access into a session using one of the keys. To begin with, after downloading the key, we are told in the challenge that we will have to use SSH (secure socket shell) on port 22, which SSH runs on default. In order to use a key with SSH for a session we use the -i parameter for the following command:&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;  ssh -i id_rsa hackerman@utkwrgubhj.qualifier.hackabit.com  #make sure you go to the directory where you saved your file
+&lt;/code&gt;&lt;/pre&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;However, the session doesn&amp;rsquo;t accept this because the key has too many accessible permissions. To reduce the permissions needed for the session to just read the key, we will use the command bellow:&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;  chmod 400 id_rsa
+&lt;/code&gt;&lt;/pre&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;After this we will just run the first command and get the output: &lt;strong&gt;flag{shesellsseashellsbytheseaaaaaaashore}&lt;/strong&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;em&gt;Side Note: I tried running these commands on the actual session but it appeared to be down.&lt;/em&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;--loading---&#34;&gt;- Loading 🌀 -&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Challenge&lt;/strong&gt;: What&amp;rsquo;s in this ISO thing?&lt;/p&gt;
+&lt;p&gt;|
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Solution&lt;/strong&gt;: With this challenge we are given the same Docker container from the Captain challenge. With no clue on what the challenge has in store, let&amp;rsquo;s see what information we can get from extracting the image from the container and saving it to our system using the command below.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;  docker save nathanielsinger/hackabit0x01-infrastructure-container1 &amp;gt; image.tar
+&lt;/code&gt;&lt;/pre&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Finally, just like a .zip file, we have to unpack the .tar file using the following command:&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;  tar -xvf image.tar
+&lt;/code&gt;&lt;/pre&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Afterward, go to the directory you&amp;rsquo;re in and find the folder 89552&amp;hellip;ea423 and the file layer.tar. Unpack the .tar &lt;code&gt;tar -xvf layer.tar&lt;/code&gt;
+&lt;!-- raw HTML omitted --&gt;
+With that, you go from &lt;code&gt;root &amp;gt; flag_image.iso&lt;/code&gt; then &lt;code&gt;cat FLAG.TXT&lt;/code&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Getting the output: &lt;strong&gt;flag{consider_it_loaded_hackerman}&lt;/strong&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;--location---&#34;&gt;- Location 🌎 -&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Challenge&lt;/strong&gt;: Now with the same image, dive on in and find the iso image. What is the absolute path to the iso image stored within the container? Include the filename in the path for your submission.&lt;/p&gt;
+&lt;p&gt;|
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Solution&lt;/strong&gt;: This one is pretty simple, the path of the file is just the location in the container. If we go back to the folder &lt;code&gt;root&lt;/code&gt; from layer.tar to &lt;code&gt;flag_image.iso&lt;/code&gt;, it would be something like &lt;code&gt;/root/flag_image.iso&lt;/code&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;--connector---&#34;&gt;- Connector 🔌 -&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Challenge&lt;/strong&gt;: Connect to the mysql server at dyxvqmjwaj.qualifier.hackabit.com and read out the flag. Here are some user accounts:&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;|
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Solution&lt;/strong&gt;: For this challenge we need to go into the challenge&amp;rsquo;s MySQL database, I used MySQL for this. With this challenge I installed it on Windows using this link &lt;!-- raw HTML omitted --&gt;here&lt;!-- raw HTML omitted --&gt;
+After completing the installation process, we have to create a new MySQL Connection like the below images:&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Then we put the following information in the fields:&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;With this we should connect to the server, however, it would appear that the server is actually down. Nevertheless, when going to each user and checking their tables, you&amp;rsquo;ll eventually go to &lt;code&gt;user4&lt;/code&gt; and find the table with the solution&amp;rsquo;s flag.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Flag: &lt;strong&gt;flag{oh_sql_my_sql}&lt;/strong&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;--boat---&#34;&gt;- Boat ⛵ -&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Challenge&lt;/strong&gt;: Sometimes we need to run a machine on a specific address or virtualize a network, get this running on: 172.22.1.11.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Container&lt;/strong&gt;: &lt;a href=&#34;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container2&#34;&gt;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;|
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Solution&lt;/strong&gt;: This challenge just giving us a Docker container to run on an IP. First things first, grab the pull request from the URL run it and wait, we get an error.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Not to worry however, from this Docker discussion, &lt;!-- raw HTML omitted --&gt;here&lt;!-- raw HTML omitted --&gt;, we find out that an error response might be due to the fact that we have to specify the version of the container. In the form, it says that we can go to the container and under the header &amp;ldquo;tags&amp;rdquo; get the version we need.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; docker pull nathanielsinger/hackabit0x01-infrastructure-container2:v1.0.0
+&lt;/code&gt;&lt;/pre&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Now that we have the container, we need to figure out on how to set this to an IP. With some googling, we will find a Docker documentation for just this feature &lt;!-- raw HTML omitted --&gt;here.&lt;!-- raw HTML omitted --&gt;
+Using the link above, we can create our own commands as such in the following image:&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;And you get the following flag: &lt;strong&gt;flag{its_just_an_address_man}&lt;/strong&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;--inspector---&#34;&gt;- Inspector 🔍 -&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Challenge&lt;/strong&gt;: Oh look its Bits, something changed though&amp;hellip; see if you can track it down.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;File&lt;/strong&gt;: &lt;!-- raw HTML omitted --&gt;Go to File&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;With this file, we are given the code documentation for the bot &amp;ldquo;Bits&amp;rdquo; in the HaB Discord server. At a first glance, it might be difficult to determine what the challenge is asking but looking into the challenge&amp;rsquo;s material, &lt;!-- raw HTML omitted --&gt;here&lt;!-- raw HTML omitted --&gt;, it appears that we are supposed to get a git version of Bits.
+&lt;!-- raw HTML omitted --&gt;
+When looking through the files in Bits, we get to a file with the directory &lt;code&gt;C:\Users\$USER\Downloads\bits\bits\.git\logs\HEAD&lt;/code&gt;. Inside of this file, we get the following commit hash &lt;code&gt;a0235bf2cf43159eff20f5b3d568a21ab288c9ff&lt;/code&gt; with the description &lt;code&gt;flag_stuff&lt;/code&gt;.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;First, go to the directory where bits is stored, then use the command below to go to the committed version of &lt;code&gt;flag_stuff&lt;/code&gt;.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;  git checkout a0235bf2cf43159eff20f5b3d568a21ab288c9ff
+&lt;/code&gt;&lt;/pre&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;After that we are given a file called &amp;ldquo;flag&amp;rdquo;. Now we use this command to read the file:&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;  cat flag
+&lt;/code&gt;&lt;/pre&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Or this command:&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  grep -r &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;flag&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Giving us the output: &lt;strong&gt;flag{don&amp;rsquo;t_try_harder&amp;hellip;look_harder}&lt;/strong&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;--hammer---&#34;&gt;- Hammer 🔨 -&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Challenge&lt;/strong&gt;: Check out oslyxpzcgs.qualifier.hackabit.com and see if you can find the vuln. No help on this one, nothing crazy though&amp;hellip; enumerate harder :)&lt;/p&gt;
+&lt;p&gt;The flag is stored in an environment variable.&lt;/p&gt;
+&lt;p&gt;With this challenge I actually didn&amp;rsquo;t finish this. I would just do it right here, however, it would appear that the session is currently down, but what I&amp;rsquo;ve learned from this challenge is that it&amp;rsquo;s a &lt;code&gt;vsftpd Smiley Face Backdoor&lt;/code&gt; vulnerability. Apparently using the :) in the username results in shell listening on TCP port 6200.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;You can learn more &lt;!-- raw HTML omitted --&gt;here&lt;!-- raw HTML omitted --&gt;.&lt;/p&gt;
+&lt;p&gt;~ CodeAPretzel&lt;/p&gt;
 </content>
     </item>
     
